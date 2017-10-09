@@ -873,3 +873,33 @@ Processing by PostsController#create as HTML
   [1m[35m (2.2ms)[0m  commit transaction
 Redirected to http://174.138.35.103:48782/posts/5
 Completed 302 Found in 12ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/posts/5" for 207.199.222.159 at 2017-10-09 20:13:00 +0000
+Cannot render console from 207.199.222.159! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 33ms (Views: 22.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/5/edit" for 207.199.222.159 at 2017-10-09 20:13:03 +0000
+Cannot render console from 207.199.222.159! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered posts/edit.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 65ms (Views: 63.3ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/posts/5" for 207.199.222.159 at 2017-10-09 20:13:06 +0000
+Cannot render console from 207.199.222.159! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f/hjrDmlFs8d6wulCoorWnDodnBX7ZkIKh5KAee2qaSf/1ClXgSchIS5dgnj9XzRfxhKnxz+A4Qn/qEtcomtig==", "post"=>{"title"=>"adf", "description"=>"asdgafdg"}, "commit"=>"Update Post", "id"=>"5"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "posts" SET "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["description", "asdgafdg"], ["updated_at", "2017-10-09 20:13:06.338757"], ["id", 5]]
+  [1m[35m (4.3ms)[0m  commit transaction
+Redirected to http://174.138.35.103:48782/posts/5
+Completed 302 Found in 12ms (ActiveRecord: 5.0ms)
